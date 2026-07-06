@@ -12,52 +12,48 @@
     outline-offset: 2px;
   }
   
-  // Glass morphism effect - collapsed state (white with strong visibility on black)
+  // Glass morphism effect - collapsed state (subtle white glass)
   &.collapsed {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 
-      0 8px 32px 0 rgba(255, 255, 255, 0.15),
-      0 0 60px 0 rgba(255, 255, 255, 0.08),
-      inset 0 1px 1px rgba(255, 255, 255, 0.2);
+      0 8px 32px 0 rgba(0, 0, 0, 0.1),
+      inset 0 1px 1px rgba(255, 255, 255, 0.1);
     
     &:hover {
-      background: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
       transform: translateY(-2px);
-      border: 1px solid rgba(200, 180, 255, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       box-shadow: 
-        0 12px 40px 0 rgba(255, 255, 255, 0.2),
-        0 0 80px 0 rgba(200, 180, 255, 0.15),
-        inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        0 12px 40px 0 rgba(0, 0, 0, 0.15),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
     }
   }
   
-  // Expanded state (purple glow that's very visible on black)
+  // Expanded state (subtle purple tint)
   &.expanded {
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.15) 0%,
-      rgba(139, 92, 246, 0.25) 100%
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(139, 92, 246, 0.12) 100%
     );
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(167, 139, 250, 0.6);
+    border: 1px solid rgba(167, 139, 250, 0.2);
     box-shadow: 
-      0 12px 40px 0 rgba(139, 92, 246, 0.5),
-      0 0 80px 0 rgba(139, 92, 246, 0.3),
-      inset 0 1px 1px rgba(255, 255, 255, 0.2);
+      0 12px 40px 0 rgba(0, 0, 0, 0.2),
+      inset 0 0 40px rgba(139, 92, 246, 0.15);
     
     &:hover {
       background: linear-gradient(
         135deg,
-        rgba(255, 255, 255, 0.2) 0%,
-        rgba(139, 92, 246, 0.35) 100%
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(139, 92, 246, 0.15) 100%
       );
-      border: 1px solid rgba(167, 139, 250, 0.8);
+      border: 1px solid rgba(167, 139, 250, 0.3);
       box-shadow: 
-        0 16px 48px 0 rgba(139, 92, 246, 0.6),
-        0 0 100px 0 rgba(139, 92, 246, 0.4),
-        inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        0 16px 48px 0 rgba(0, 0, 0, 0.25),
+        inset 0 0 60px rgba(139, 92, 246, 0.2);
     }
   }
 }
@@ -76,15 +72,16 @@
 }
 
 .title {
+  display: block;
   margin: 0;
   font-size: 1.75rem;
   font-weight: 700;
   color: #f3f4f6;
   transition: color 0.3s ease;
-  
-  .expanded & {
-    color: #c4b5fd;
-  }
+}
+
+.collapsible-block.expanded .title {
+  color: #c4b5fd;
 }
 
 .description {
@@ -99,8 +96,8 @@
 
 .image-container {
   flex-shrink: 0;
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
   border-radius: 12px;
   overflow: hidden;
   opacity: 0;
@@ -124,22 +121,22 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    // transform: translateY(10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    // transform: translateY(0);
   }
 }
 
 @keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translateX(20px);
+    // transform: translateX(20px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    // transform: translateX(0);
   }
 }
 
