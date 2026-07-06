@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+/* Remove default margin and padding from everything */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+/* Make images responsive and fluid */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
