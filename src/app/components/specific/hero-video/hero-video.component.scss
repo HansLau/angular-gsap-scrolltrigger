@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  // Takes up the full width available, height determined by video aspect ratio.
+  width: 100%;
+}
+
+.hero-video {
+  // Let the video keep its natural aspect ratio.
+  // max-width ensures it never overflows the container.
+  width: auto;
+  max-height: 100dvh;
+  display: block;
+  margin-inline: auto;
+}
