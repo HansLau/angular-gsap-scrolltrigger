@@ -1,0 +1,46 @@
+.rainbow-hover {
+  --border: 1px;
+
+  position: relative;
+  padding: 0.6rem 2rem;
+  border: none;
+  border-radius: 999px;
+  background: #111;
+  color: white;
+  cursor: pointer;
+}
+
+.rainbow-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: var(--border);
+  border-radius: inherit;
+
+  background: linear-gradient(
+    90deg,
+    #ff4d4d,
+    #ffb84d,
+    #ffe44d,
+    #66ff66,
+    #4dd2ff,
+    #6677ff,
+    #d966ff,
+    #ff4d4d
+  );
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  transition: background-position 0.4s ease;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;
+}
+
+.rainbow-hover:hover::before {
+  background-position: 100% 50%;
+}
