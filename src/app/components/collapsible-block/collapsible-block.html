@@ -1,0 +1,31 @@
+<article 
+  [id]="elementId()"
+  class="collapsible-block"
+  (click)="onBlockClick($event)"
+  role="button"
+  [attr.aria-expanded]="isExpanded()"
+  [attr.aria-label]="title() + (isExpanded() ? ' (expanded)' : ' (collapsed)')"
+  tabindex="0"
+  (keydown.enter)="toggleExpanded()"
+  (keydown.space)="toggleExpanded(); $event.preventDefault()">
+  
+  <div class="content-wrapper">
+    <div class="text-content">
+      <h2 class="title">{{ title() }}</h2>
+      
+      @if (isExpanded()) {
+        <p class="description">{{ description() }}</p>
+      }
+    </div>
+    
+    @if (isExpanded()) {
+      <div class="image-container">
+        <img 
+          [src]="imageUrl()" 
+          [alt]="title()"
+          class="block-image"
+          loading="lazy" />
+      </div>
+    }
+  </div>
+</article>
