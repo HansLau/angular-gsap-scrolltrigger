@@ -86,6 +86,7 @@
     padding: 1rem;
     box-sizing: inherit;
     position: relative;
+    isolation: isolate;
     
     background: var(--gray-900);
   }
@@ -209,50 +210,51 @@
 </header> 
 <main class="main">
   <div class="content">
-    <section class="hero section-full-page">
+    <section class="hero section-full-page" #heroSection>
+      <hero-video #heroVideoComponent></hero-video>
       <div class="hero-text">
-        <h1>Precision-led, built to deliver</h1>
-        <p>We design and bbuild digital system where UX, AI and engineering move as one.</p>
-        <div class="button-container">
-          <app-button label="About us" />
-          <app-button label="Our approach" />
+          <h1>Precision-led, built to deliver</h1>
+          <p>We design and bbuild digital system where UX, AI and engineering move as one.</p>
+          <div class="button-container">
+            <app-button label="About us" />
+            <app-button label="Our approach" />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     <section class="second section-full-page">
-      <div class>
-        <h2>Five disciplines. One integrated system.</h2>
-        <div class="block-container">
-          <app-collapsible-block
-            title="User Experience Design"
-            description="We craft intuitive, accessible interfaces that put users first. Our design process combines research, prototyping, and testing to create experiences that delight and convert."
-            imageUrl="https://picsum.photos/400/400?random=1"
-            hash="ux-design"
-            [isExpanded]="openBlockHash() === 'ux-design'"
-            (toggle)="toggleBlock('ux-design')"
-            (scrollToBlock)="scrollToBlock($event)" />
-          
-          <app-collapsible-block
-            title="Artificial Intelligence"
-            description="Leveraging cutting-edge AI technologies to build intelligent systems that learn, adapt, and deliver personalized experiences at scale."
-            imageUrl="https://picsum.photos/400/400?random=2"
-            hash="ai-systems"
-            [isExpanded]="openBlockHash() === 'ai-systems'"
-            (toggle)="toggleBlock('ai-systems')"
-            (scrollToBlock)="scrollToBlock($event)" />
-          
-          <app-collapsible-block
-            title="Software Engineering"
-            description="Building robust, scalable applications with modern frameworks and best practices. We deliver clean, maintainable code that stands the test of time."
-            imageUrl="https://picsum.photos/400/400?random=3"
-            hash="engineering"
-            [isExpanded]="openBlockHash() === 'engineering'"
-            (toggle)="toggleBlock('engineering')"
-            (scrollToBlock)="scrollToBlock($event)" />
+        <div class>
+          <h2>Five disciplines. One integrated system.</h2>
+          <div class="block-container">
+            <app-collapsible-block
+              title="User Experience Design"
+              description="We craft intuitive, accessible interfaces that put users first. Our design process combines research, prototyping, and testing to create experiences that delight and convert."
+              imageUrl="https://picsum.photos/400/400?random=1"
+              hash="ux-design"
+              [isExpanded]="openBlockHash() === 'ux-design'"
+              (toggle)="toggleBlock('ux-design')"
+              (scrollToBlock)="scrollToBlock($event)" />
+            
+            <app-collapsible-block
+              title="Artificial Intelligence"
+              description="Leveraging cutting-edge AI technologies to build intelligent systems that learn, adapt, and deliver personalized experiences at scale."
+              imageUrl="https://picsum.photos/400/400?random=2"
+              hash="ai-systems"
+              [isExpanded]="openBlockHash() === 'ai-systems'"
+              (toggle)="toggleBlock('ai-systems')"
+              (scrollToBlock)="scrollToBlock($event)" />
+            
+            <app-collapsible-block
+              title="Software Engineering"
+              description="Building robust, scalable applications with modern frameworks and best practices. We deliver clean, maintainable code that stands the test of time."
+              imageUrl="https://picsum.photos/400/400?random=3"
+              hash="engineering"
+              [isExpanded]="openBlockHash() === 'engineering'"
+              (toggle)="toggleBlock('engineering')"
+              (scrollToBlock)="scrollToBlock($event)" />
+          </div>
         </div>
-      </div>
 
-    </section>
+      </section>
     <section class="area-of-focus">
       <div>
         <div class="area-of-focus__title">

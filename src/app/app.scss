@@ -26,6 +26,20 @@ section {
     // justify-content: space-between; 
 }
 
+.bg-video-container{
+  position: sticky;
+  inset: 0;
+  // top: px;
+  isolation: isolate;
+  z-index: -1;
+}
+
+.hero-video {
+  // position: fixed;
+  // top: 0
+  
+}
+
 .focus-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
